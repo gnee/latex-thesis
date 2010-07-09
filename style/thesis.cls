@@ -15,16 +15,16 @@
 \RequirePackage{ifpdf}
 \RequirePackage{graphicx,amsfonts,amsmath,amssymb,psfrag,fancyhdr,appendix,subfigure}
 \RequirePackage{layout}
-\RequirePackage[sectionbib]{natbib}
-\RequirePackage{chapterbib}
+%% \RequirePackage[sectionbib]{natbib}
+%% \RequirePackage{chapterbib}
 \RequirePackage{makeidx} % pour l'index
 \RequirePackage[english,frenchb]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xcolor}
 \RequirePackage[algo2e,ruled,vlined,french]{algorithm2e}
+%% \RequirePackage{thesischapter}
 \RequirePackage{nota}
-%\RequirePackage{thesischapter}
 
 \definecolor{tango-green-1}{HTML}{8ae234}
 \definecolor{tango-green-3}{HTML}{4e9a06}
@@ -110,3 +110,10 @@ colorlinks=false]{hyperref}
 \newenvironment{nota}{%
   \begin{pictonote}{\ficnota}}{\end{pictonote}}
 
+%-----------------------------------------------------------------------
+% référence à une même note de fin de page
+% exemple :
+% une note\footnote{un note partagée\label{note1}} blablabla et je la
+% partage ici\refnote{note1}. C'est pas beau ça ?? (vient du package
+% french)
+\def\refnote#1{\hbox{$^{\ref{#1}}$}}
